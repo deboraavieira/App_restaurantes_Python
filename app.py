@@ -1,6 +1,7 @@
 import os
+from restaurantes import *
 
-# Dicionario pra guardar os restaurantes
+# Dicionario pra guardar os restaurantes ( IMPORTAR ARQUIVO CSV)
 restaurantes = [{'nome':'Pizzaria Sucesso','categoria':'Italiana','ativo':False},
                 {'nome':'Querido Donuts','categoria':'Doceria','ativo':True},
                 {'nome':'Sushi e Cia','categoria':'Japonesa','ativo':False}]
@@ -34,42 +35,65 @@ def exibir_subtitulo(texto):
     print(linha) 
     print()
 
+#metodo para cadastrar restaurante
 def cadastrar_restaurante():
     '''Essa função é responsável por cadastrar um novo restaurante
     inputs: nome do restaurante e categoria
     outputs: add o restaurante a lista de restaurantes 
-    ''' #docstring serve para explicar o que será feito dentro daquela função
+    ''' 
     exibir_subtitulo('Cadastro de novos restaurantes')
     nome_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
     categoria = input(f'Digite o nome da categoria do restaurante {nome_restaurante}: ')
-    dados_restaurante = {'nome':nome_restaurante,'categoria':categoria,'ativo':False}
-    restaurantes.append(dados_restaurante)
+    localizacao = input(f'Digite a localização do restaurante {nome_restaurante}: ')
+    status = input(f'Digite o status do restaurante {nome_restaurante}: ') 
+    tipo_servico = input(f'Digite o tipo de serviço que o restaurante {nome_restaurante} fornece: ') 
+    dados_restaurante = {'nome':nome_restaurante,'categoria':categoria,'localizacao':localizacao,'status':status,'tipo_servico':tipo_servico}
+    restaurantes.append(dados_restaurante)  # inseria no dicionario de restaurantes
     print(f'O restaurante {nome_restaurante} foi cadastrado com sucesso!')
     voltar_menu()
-
-def alternar_estado_restaurante():
-    '''Essa função é responsável por alternar o estado de ativação do restaurante'''
-    exibir_subtitulo('Alternando o estado do restaurante')
-    nome_restaurante=input('Digite o nome do restaurante que deseja alternar o estado: ')
-    restaurante_encontrado=False
-    for restaurante in restaurantes:
-        if nome_restaurante == restaurante['nome']:
-            restaurante_encontrado=True
-            restaurante['ativo']=not restaurante['ativo'] #not é um operador que troca o valor do valor que a variavel tem
-            mensagem = (f'O restaurante{nome_restaurante} foi ativado com sucesso') if restaurante['ativo'] else (f'O restaurante {nome_restaurante}foi desativado com sucesso')
-            print(mensagem)
-        if not restaurante_encontrado:
-            print('O restaurante não foi encontrado')    
-    voltar_menu()
+ 
+ #metodo para listar restaurante:   
 def listar_restaurantes():
     '''Essa função é responsável por listar os restaurantes cadastrados'''
     exibir_subtitulo('Listando os restaurantes')
-    print(f'{'Nome do restaurante'.ljust(22)}|{'Categoria'.ljust(20)}| {'Status'}')
-    for restaurante in restaurantes:  
-        nome_restaurante = restaurante['nome']
-        categoria = restaurante['categoria']
-        ativo = 'ativado' if restaurante['ativo'] else 'desativado'  #ternário(condicao toda em uma linha, 1ºvdd e segundo falso)
-        print(f'- {nome_restaurante.ljust(20)} |{categoria.ljust(20)} | {ativo}')
+    if not restaurantes:
+        print("Nenhum restaurante cadastrado.")
+    else:
+        print(f"{'Nome do restaurante'.ljust(22)}|{'Categoria'.ljust(20)}| {'Localização'.ljust(20)}| {'Status'.ljust(20)}| {'Tipo de Serviço'}")
+        for restaurante in restaurantes:  
+            nome_restaurante = restaurante['nome']
+            categoria = restaurante['categoria']
+            localizacao = restaurante['localizacao']
+            status = restaurante['status']
+            tipo_servico = restaurante['tipo_servico']
+            print(f"- {nome_restaurante.ljust(20)} | {categoria.ljust(20)} | {localizacao.ljust(20)} | {status.ljust(20)} | {tipo_servico}")
+    voltar_menu()
+
+    #metodo alterar restaurante:
+def alterar_restaurante():
+    '''Essa função é responsável por alterar os dados de um restaurante'''
+    exibir_subtitulo('Alterar dados do restaurante')
+    nome_restaurante = input('Digite o nome do restaurante que deseja alterar: ')
+    restaurante_encontrado = False
+    for restaurante in restaurantes:
+        if restaurante['nome'] == nome_restaurante:
+            restaurante_encontrado = True
+            categoria = input(f'Digite a nova categoria do restaurante {nome_restaurante} (deixe em branco para manter): ')
+            localizacao = input(f'Digite a nova localização do restaurante {nome_restaurante} (deixe em branco para manter): ')
+            status = input(f'Digite o novo status do restaurante {nome_restaurante} (deixe em branco para manter): ')
+            tipo_servico = input(f'Digite o novo tipo de serviço do restaurante {nome_restaurante} (deixe em branco para manter): ')
+            if categoria:
+                restaurante['categoria'] = categoria
+            if localizacao:
+                restaurante['localizacao'] = localizacao
+            if status:
+                restaurante['status'] = status
+            if tipo_servico:
+                restaurante['tipo_servico'] = tipo_servico
+            print(f'Os dados do restaurante {nome_restaurante} foram atualizados com sucesso!')
+            break
+    if not restaurante_encontrado:
+        print('O restaurante não foi encontrado.')    
     voltar_menu()
 
 def escolher_opcao():
@@ -80,7 +104,7 @@ def escolher_opcao():
         elif opcao_escolhida == 2:
             listar_restaurantes()
         elif opcao_escolhida == 3:
-            alternar_estado_restaurante()
+            alterar_restaurante()
         elif opcao_escolhida == 4:
             finalizar_app()
         else:

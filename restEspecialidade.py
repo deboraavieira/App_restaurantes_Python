@@ -136,31 +136,33 @@ class LusoBrasileiro(Restaurante):
               Pagamento: {self.pagamento}
               ''')     
     
-     #metodo para escolher o tipo de culinaria
-    def escolheCulinaria(self):
+     #metodo para mostrar o tipo de culinaria e escolher tipo de comida
+    def mostraCulinaria(self):
         if self.tculinaria == 'brasileira':
             opcao_escolhida = (input('''Selecione uma opção: mineira, churrasco, nordestina, capixaba'''))
             if opcao_escolhida == 'mineira':
-                print(f'Você escolheu a culinária  brasileira e o tipo de comida {opcao_escolhida}')
+                print(f'Você escolheu um restaurante de culinária  brasileira com o tipo de comida {opcao_escolhida}')
             elif opcao_escolhida == 'churrasco':
-                print(f'Você escolheu a culinária  brasileira e o tipo de comida {opcao_escolhida}')
+                print(f'Você escolheu um restaurante de culinária  brasileira com o tipo de comida {opcao_escolhida}')
             elif opcao_escolhida == 'nordestina':
-                print(f'Você escolheu a culinária  brasileira e o tipo de comida {opcao_escolhida}')
+                print(f'Você escolheu um restaurante de culinária  brasileira com o tipo de comida {opcao_escolhida}')
             elif opcao_escolhida == 'capixaba':
-                 print(f'Você escolheu a culinária  brasileira e o tipo de comida {opcao_escolhida}')
+                print(f'Você escolheu um restaurante de culinária  brasileira com o tipo de comida {opcao_escolhida}')
             else:
                 print(f'Infelizmente não dispomos desse tipo de comida ainda.Tente novamente!')
         elif self.tculinaria == 'portuguesa':
             opcao_escolhida = (input('''Selecione uma opção: alentejana, transmontana, minhota, ribatejo'''))
             if opcao_escolhida == 'alentejana':
-                 print(f'Você escolheu a culinária  portuguesa e o tipo de comida {opcao_escolhida}')
+                print(f'Você escolheu um restaurante de culinária  portuguesa com tipo de comida {opcao_escolhida}')
             elif opcao_escolhida == 'transmontana':
-                 print(f'Você escolheu a culinária  portuguesa e o tipo de comida {opcao_escolhida}')
+               print(f'Você escolheu um restaurante de culinária  portuguesa com tipo de comida {opcao_escolhida}')
             elif opcao_escolhida == 'minhota':
-                 print(f'Você escolheu a culinária  portuguesa e o tipo de comida {opcao_escolhida}')
+              print(f'Você escolheu um restaurante de culinária  portuguesa com tipo de comida {opcao_escolhida}')
             elif opcao_escolhida == 'ribatejo':
-                 print(f'Você escolheu a culinária  portuguesa e o tipo de comida {opcao_escolhida}')
+                print(f'Você escolheu um restaurante de culinária  portuguesa com tipo de comida {opcao_escolhida}')
             else:
                 print(f'Infelizmente não dispomos desse tipo de comida ainda.Tente novamente!')  
         else:
             print(f'Infelizmente não dispomos dessa culinária.Tente novamente!')        
+     
+            
