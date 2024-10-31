@@ -1,8 +1,8 @@
 from restaurantes import *
 
 class Hamburgueria(Restaurante):
-    def __init__(self, nome, localizacao, status, tservico,tmolho):
-        super().__init__(nome, localizacao, status, tservico) #chama o construtor da classe mãe
+    def __init__(self, nome, localizacao, status,tmolho):
+        super().__init__(nome, localizacao, status) #chama o construtor da classe mãe
         self.tmolho = tmolho #cheddar,verde,barbecue,mostarda,caeser,kebab,maionese,ketchup, coctail,picante
 
      #definição de metodo
@@ -11,7 +11,6 @@ class Hamburgueria(Restaurante):
               Nome: {self.nome}
               Localização: {self.localizacao}
               Status: {self.status}
-              Tipo de Serviço: {self.tservico}
               Molho: {self.tmolho}
               Pagamento: {self.pagamento}
               ''')
@@ -25,8 +24,8 @@ class Hamburgueria(Restaurante):
 ###################################################################################################################################################
     
 class Italiano(Restaurante):
-    def __init__(self, nome, localizacao, status, tservico, tmassa,tpizza):
-        super().__init__(nome, localizacao, status, tservico) #chama o construtor da classe mãe
+    def __init__(self, nome, localizacao, status,tmassa,tpizza):
+        super().__init__(nome, localizacao, status) #chama o construtor da classe mãe
         self.tmassa = tmassa #espagetti,talharim,gnocchi,ravioli,tortelini,fusilli,penne,lasanha,fetuccini
         self.tpizza = tpizza #quatro queijos,calabresa,frango com catupiry, peperoni, romana, havaiana, portuguesa
     
@@ -36,7 +35,6 @@ class Italiano(Restaurante):
               Nome: {self.nome}
               Localização: {self.localizacao}
               Status: {self.status}
-              Tipo de Serviço: {self.tservico}
               Massa: {self.massa}
               Pizza: {self.pizza}
               Pagamento: {self.pagamento}
@@ -55,8 +53,8 @@ class Italiano(Restaurante):
         
  ###################################################################################################################################################           
 class Asiatico(Restaurante):
-    def __init__(self, nome, localizacao, status, tservico, trodizio):
-        super().__init__(nome, localizacao, status, tservico) #chama o construtor da classe mãe
+    def __init__(self, nome, localizacao, status,trodizio):
+        super().__init__(nome, localizacao, status) #chama o construtor da classe mãe
         self.trodizio = trodizio #simples,premium,tradicional,supreme
         
      #definição de metodo (herdado classe mãe - sobreposto)
@@ -65,7 +63,6 @@ class Asiatico(Restaurante):
               Nome: {self.nome}
               Localização: {self.localizacao}
               Status: {self.status}
-              Tipo de Serviço: {self.tservico}
               Rodízio: {self.rodizio}
               Pagamento: {self.pagamento}
               ''')     
@@ -77,8 +74,8 @@ class Asiatico(Restaurante):
 
 ###################################################################################################################################################
 class Pastelaria(Restaurante):
-    def __init__(self, nome, localizacao, status, tservico, tdoce):
-        super().__init__(nome, localizacao, status, tservico) #chama o construtor da classe mãe
+    def __init__(self, nome, localizacao, status,tdoce):
+        super().__init__(nome, localizacao, status) #chama o construtor da classe mãe
         self.tdoce = tdoce  #bolos,pastel de nata, docinho, miniaturas,eclair,bolachas,tartes,quindim
         
      #definição de metodo (herdado classe mãe - sobreposto)
@@ -87,7 +84,6 @@ class Pastelaria(Restaurante):
               Nome: {self.nome}
               Localização: {self.localizacao}
               Status: {self.status}
-              Tipo de Serviço: {self.tservico}
               Doçaria: {self.tdoce}
               Pagamento: {self.pagamento}
               ''')     
@@ -98,8 +94,8 @@ class Pastelaria(Restaurante):
         
 ################################################################################################################################################### 
 class Saudavel(Restaurante):
-    def __init__(self, nome, localizacao, status, tservico, tsmothie):
-        super().__init__(nome, localizacao, status, tservico) #chama o construtor da classe mãe
+    def __init__(self, nome, localizacao, status,tsmothie):
+        super().__init__(nome, localizacao, status) #chama o construtor da classe mãe
         self.tsmothie = tsmothie  #smothie verde, smothie da imunidade, smothie energizante, smothie antioxidante, smothie detox, smothie refrescante
         
      #definição de metodo (herdado classe mãe - sobreposto)
@@ -108,7 +104,6 @@ class Saudavel(Restaurante):
               Nome: {self.nome}
               Localização: {self.localizacao}
               Status: {self.status}
-              Tipo de Serviço: {self.tservico}
               Tipo de Sumo: {self.tsumo}
               Pagamento: {self.pagamento}
               ''')  
@@ -119,8 +114,8 @@ class Saudavel(Restaurante):
 
 ###################################################################################################################################################
 class LusoBrasileiro(Restaurante):
-    def __init__(self, nome, localizacao, status, tservico, tculinaria,opcoes):
-        super().__init__(nome, localizacao, status, tservico) #chama o construtor da classe mãe
+    def __init__(self, nome, localizacao, status, tculinaria,opcoes):
+        super().__init__(nome, localizacao, status) #chama o construtor da classe mãe
         self.tculinaria = tculinaria  #portuguesa,brasileira
         self.opcoes = opcoes  #menu do dia, sugestão do chef, a la carte
         
@@ -130,7 +125,6 @@ class LusoBrasileiro(Restaurante):
               Nome: {self.nome}
               Localização: {self.localizacao}
               Status: {self.status}
-              Tipo de Serviço: {self.tservico}
               Tipo de Culinária: {self.tculinaria}
               Opções de Menu: {self.opcoes}
               Pagamento: {self.pagamento}

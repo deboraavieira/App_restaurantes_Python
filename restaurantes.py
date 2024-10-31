@@ -1,12 +1,11 @@
 #criação da classe restaurantes
 class Restaurante:
     contadorRestaurante = 0             #contador de restaurantes
-    def __init__(self, nome,localizacao,status,tservico):
+    def __init__(self, nome,localizacao,status):
         self.pagamento = 'Cartão'      #atributo fixo, não passado como argumento
         self.nome = nome
         self.localizacao = localizacao  #bairros de lisboa
         self.status = status            #aberto/fechado
-        self.tservico = tservico         #delivery,takeaway,comer no local
         Restaurante.contadorRestaurante += 1
         
     #definição dos métodos    
@@ -15,7 +14,6 @@ class Restaurante:
               Nome: {self.nome}
               Localização: {self.localizacao}
               Status: {self.status}
-              Tipo de Serviço: {self.tservico}
               Pagamento: {self.pagamento}
               ''')
         
