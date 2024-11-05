@@ -2,7 +2,7 @@ import pandas as pd
 import os
 from restaurantes import *
 from restEspecialidade import *
-restaurantes = pd.read_csv('/Users/deboravieira/Documents/testePy/ListaRestaurantes.csv')
+restaurantes = pd.read_csv('/Users/deboravieira/Documents/GitHub/projPython/ListaRestaurantes.csv')
 restaurantes.head(5)
 print(restaurantes)
 #nome da app
@@ -42,7 +42,7 @@ def cadastrar_restaurante():
     Categoria = input(f'Digite o nome da categoria do restaurante {nome}: ')
     Localizacao = input(f'Digite a localização do restaurante {nome}: ')
     status = input(f'Digite o status do restaurante {nome}: ') 
-    pagamento = input(f'Digite o tipo de pagamento que o restaurante {nome} fornece: ')    
+    pagamento = ('cartão')    
     # Serve para criar uma nova linha no DataFrame
     novo_restaurante = pd.DataFrame({
         'Nome': [nome],
@@ -50,13 +50,12 @@ def cadastrar_restaurante():
         'Localização': [Localizacao],
         'Status': [status],
         'Pagamento': [pagamento]
-    }) 
+    })
     # Concatena com o existente
     global restaurantes
     restaurantes = pd.concat([restaurantes, novo_restaurante], ignore_index=True)
     # Salva em CSV
-    restaurantes.to_csv('/Users/deboravieira/Documents/testePy/ListaRestaurantes.csv', index=False)
-    
+    restaurantes.to_csv('/Users/deboravieira/Documents/GitHub/projPython/ListaRestaurantes.csv', index=False)
     print(f'O restaurante {nome} foi cadastrado com sucesso!')
     voltar_menu()
 
@@ -87,7 +86,7 @@ def alterar_restaurante():
         if tipo_servico:
             restaurantes.at[idx, 'Pagamento'] = tipo_servico  
         # Salva as alterações em CSV
-        restaurantes.to_csv('/Users/deboravieira/Documents/testePy/ListaRestaurantes.csv', index=False)
+        restaurantes.to_csv('/Users/deboravieira/Documents/GitHub/projPython/ListaRestaurantes.csv', index=False)
         print(f'Os dados do restaurante {nome_restaurante} foram atualizados com sucesso!')
     else:
         print('O restaurante não foi encontrado.')    
@@ -102,7 +101,7 @@ def eliminar_restaurante():
         # Remove o restaurante
         restaurantes.drop(restaurantes[restaurantes['Nome'] == nome_restaurante].index, inplace=True)
         # Salva as alterações em CSV
-        restaurantes.to_csv('/Users/deboravieira/Documents/testePy/ListaRestaurantes.csv', index=False)
+        restaurantes.to_csv('/Users/deboravieira/Documents/GitHub/projPython/ListaRestaurantes.csv', index=False)
         print(f'O restaurante {nome_restaurante} foi eliminado com sucesso!')
     else:
         print('O restaurante não foi encontrado.')    
