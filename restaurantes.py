@@ -1,4 +1,4 @@
-#criação da classe restaurantes
+#criação da classe restaurante
 class Restaurante:
     contadorRestaurante = 0             #contador de restaurantes
     def __init__(self, nome,localizacao,status):

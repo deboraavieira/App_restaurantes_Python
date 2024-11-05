@@ -1,0 +1,29 @@
+Nome,Categoria,Localização,Status,Pagamento
+Sabor Oriental,asiática,Alfama,Aberto,cartão
+Sabores do Extremo Oriente,asiática,Bairro Alto,Fechado,cartão
+Casa do Gengibre,asiática,Chiado,Aberto,cartão
+Nippon Delícias,asiática,Docas de Santo Amaro,Fechado,cartão
+Tempero Tropical,lusobrasileira,Parque das Nações,Fechado,cartão
+Raízes do Brasil,lusobrasileira,Amadora,Aberto,cartão
+Sabores do Sertão,lusobrasileira,Cascais,Aberto,cartão
+Chama Gaúcha,lusobrasileira,Docas de Santo Amaro,Fechado,cartão
+Almma,pastelaria,Alfama,Aberto,cartão
+Encanto Doce,pastelaria,Baixa Lisboa,Aberto,cartão
+Doce Pecado,pastelaria,Bairro da Lapa,Aberto,cartão
+Céu de Açúcar,pastelaria,Chiado,Fechado,cartão
+Rockburguer,hamburgeria,Campo de Ourique,Aberto,cartão
+Burguer & Companhia,hamburgeria,Cascais,Aberto,cartão
+Rei do Pão e Carne,hamburgeria,Amadora,Fechado,cartão
+A Hamburgueria,hamburgeria,Alfama,Aberto,cartão
+La Tavola Italiana,italiana,Amadora,Fechado,cartão
+Sabor a Itália,italiana,Campo de Ourique,Aberto,cartão
+Cantina Deliziosa,italiana,Alfama,Fechado,cartão
+Cozinha da Nonna,italiana,Penha de França,Aberto,cartão
+Taberna Portuguesa,lusobrasileira,Parque das Nações,Fechado,cartão
+Sabores do Tejo,lusobrasileira,Carnaxide,Aberto,cartão
+Tasca do Fado,lusobrasileira,Chiado,Aberto,cartão
+O Mar e a Serra,lusobrasileira,Parque das Nações,Fechado,cartão
+Leve e Saboroso,saudável,Carnaxide,Aberto,cartão
+Verde Vigor,saudável,Amadora,Fechado,cartão
+Natureza no Prato,saudável,Alfama,Aberto,cartão
+Sabores da Terra,saudável,Campo de Ourique,Aberto,cartão

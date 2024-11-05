@@ -24,10 +24,9 @@ class Hamburgueria(Restaurante):
 ###################################################################################################################################################
     
 class Italiano(Restaurante):
-    def __init__(self, nome, localizacao, status,tmassa,tpizza):
+    def __init__(self, nome, localizacao, status,tmenu):
         super().__init__(nome, localizacao, status) #chama o construtor da classe mãe
-        self.tmassa = tmassa #espagetti,talharim,gnocchi,ravioli,tortelini,fusilli,penne,lasanha,fetuccini
-        self.tpizza = tpizza #quatro queijos,calabresa,frango com catupiry, peperoni, romana, havaiana, portuguesa
+        self.tmenu = tmenu
     
     #definição de metodo (herdado classe mãe - sobreposto)
     def mostra_restaurante(self):
@@ -35,21 +34,55 @@ class Italiano(Restaurante):
               Nome: {self.nome}
               Localização: {self.localizacao}
               Status: {self.status}
-              Massa: {self.massa}
-              Pizza: {self.pizza}
+              Cardápio: {self.tmenu}
               Pagamento: {self.pagamento}
               ''')   
     
-    #metodo para escolher massa
-    def escolheMassa(self,tmassa):
-        print(f'A massa escolhida foi {tmassa}')
-
-            
-    #metodo para escolher pizza
-    def escolhePizza(self,tpizza):
-        print(f'A pizza escolhida foi {tpizza}')
-    
-     
+     #metodo para mostrar o escolher tipo de comida
+    def mostraCardapio(self):
+        if self.tmenu == 'Massa':
+            opcao_selecionada = (input('Selecione uma opção: espagetti,talharim,gnocchi,ravioli,tortelini,fusilli,penne,lasanha,fetuccini: '))
+            if opcao_selecionada == 'espagetti':
+                print(f'Você escolheu um restaurante de culinária  italiana com a massa {opcao_selecionada}')
+            elif opcao_selecionada == 'talharim':
+                print(f'Você escolheu um restaurante de culinária  italiana com a massa {opcao_selecionada}')
+            elif opcao_selecionada == 'gnocchi':
+                print(f'Você escolheu um restaurante de culinária  italiana com a massa {opcao_selecionada}')
+            elif opcao_selecionada == 'ravioli':
+                print(f'Você escolheu um restaurante de culinária  italiana com a massa {opcao_selecionada}')
+            elif opcao_selecionada == 'tortelini':
+                print(f'Você escolheu um restaurante de culinária  italiana com a massa {opcao_selecionada}')
+            elif opcao_selecionada == 'fusilli':
+                print(f'Você escolheu um restaurante de culinária  italiana com a massa {opcao_selecionada}')   
+            elif opcao_selecionada == 'penne':
+                print(f'Você escolheu um restaurante de culinária  italiana com a massa {opcao_selecionada}') 
+            elif opcao_selecionada == 'lasanha':
+                print(f'Você escolheu um restaurante de culinária  italiana com a massa {opcao_selecionada}') 
+            elif opcao_selecionada == 'fetuccini':
+                print(f'Você escolheu um restaurante de culinária  italiana com a massa {opcao_selecionada}')      
+            else:
+                print(f'Infelizmente não dispomos desse tipo de massa ainda.Tente novamente!')
+        elif self.tmenu == 'Pizza':
+            opcao_selecionada = (input('Selecione uma opção: quatro queijos,calabresa,frango com catupiry, peperoni, romana, havaiana, portuguesa: '))
+            if opcao_selecionada == 'quatro queijos':
+                print(f'Você escolheu um restaurante de culinária  italiana com a pizza {opcao_selecionada}')
+            elif opcao_selecionada == 'calabresa':
+                print(f'Você escolheu um restaurante de culinária  italiana com a pizza {opcao_selecionada}')
+            elif opcao_selecionada == 'frango com catupiry':
+                print(f'Você escolheu um restaurante de culinária  italiana com a pizza {opcao_selecionada}')
+            elif opcao_selecionada == 'peperoni':
+                print(f'Você escolheu um restaurante de culinária  italiana com a pizza {opcao_selecionada}')
+            elif opcao_selecionada == 'romana':
+                print(f'Você escolheu um restaurante de culinária  italiana com a pizza {opcao_selecionada}')
+            elif opcao_selecionada == 'havaiana':
+                print(f'Você escolheu um restaurante de culinária  italiana com a pizza {opcao_selecionada}')   
+            elif opcao_selecionada == 'portuguesa':
+                print(f'Você escolheu um restaurante de culinária  italiana com a pizza {opcao_selecionada}')    
+            else:
+                print(f'Infelizmente não dispomos desse tipo de pizza ainda.Tente novamente!')     
+        else:
+            print(f'Infelizmente não dispomos desse menu.Tente novamente!')        
+      
         
  ###################################################################################################################################################           
 class Asiatico(Restaurante):
@@ -63,7 +96,7 @@ class Asiatico(Restaurante):
               Nome: {self.nome}
               Localização: {self.localizacao}
               Status: {self.status}
-              Rodízio: {self.rodizio}
+              Rodízio: {self.trodizio}
               Pagamento: {self.pagamento}
               ''')     
         
@@ -104,7 +137,7 @@ class Saudavel(Restaurante):
               Nome: {self.nome}
               Localização: {self.localizacao}
               Status: {self.status}
-              Tipo de Sumo: {self.tsumo}
+              Tipo de Smothie: {self.tsmothie}
               Pagamento: {self.pagamento}
               ''')  
      
@@ -114,10 +147,9 @@ class Saudavel(Restaurante):
 
 ###################################################################################################################################################
 class LusoBrasileiro(Restaurante):
-    def __init__(self, nome, localizacao, status, tculinaria,opcoes):
+    def __init__(self, nome, localizacao, status, tculinaria):
         super().__init__(nome, localizacao, status) #chama o construtor da classe mãe
         self.tculinaria = tculinaria  #portuguesa,brasileira
-        self.opcoes = opcoes  #menu do dia, sugestão do chef, a la carte
         
      #definição de metodo (herdado classe mãe - sobreposto)
     def mostra_restaurante(self):
@@ -126,14 +158,13 @@ class LusoBrasileiro(Restaurante):
               Localização: {self.localizacao}
               Status: {self.status}
               Tipo de Culinária: {self.tculinaria}
-              Opções de Menu: {self.opcoes}
               Pagamento: {self.pagamento}
               ''')     
     
      #metodo para mostrar o tipo de culinaria e escolher tipo de comida
     def mostraCulinaria(self):
         if self.tculinaria == 'brasileira':
-            opcao_escolhida = (input('''Selecione uma opção: mineira, churrasco, nordestina, capixaba'''))
+            opcao_escolhida = (input('Selecione uma opção: mineira, churrasco, nordestina, capixaba: '))
             if opcao_escolhida == 'mineira':
                 print(f'Você escolheu um restaurante de culinária  brasileira com o tipo de comida {opcao_escolhida}')
             elif opcao_escolhida == 'churrasco':
@@ -145,7 +176,7 @@ class LusoBrasileiro(Restaurante):
             else:
                 print(f'Infelizmente não dispomos desse tipo de comida ainda.Tente novamente!')
         elif self.tculinaria == 'portuguesa':
-            opcao_escolhida = (input('''Selecione uma opção: alentejana, transmontana, minhota, ribatejo'''))
+            opcao_escolhida = (input('Selecione uma opção: alentejana, transmontana, minhota, ribatejo: '))
             if opcao_escolhida == 'alentejana':
                 print(f'Você escolheu um restaurante de culinária  portuguesa com tipo de comida {opcao_escolhida}')
             elif opcao_escolhida == 'transmontana':
