@@ -8,7 +8,7 @@ class Restaurante:
         self.status = status            #aberto/fechado
         Restaurante.contadorRestaurante += 1
         
-    #definição dos métodos    
+    #definição dos método para mostrar as características do restaurante   
     def mostra_restaurante(self):
         print(f''' Características do restaurante:
               Nome: {self.nome}

@@ -1,5 +1,5 @@
-from restaurantes import *
-
+from restaurante import *
+#definição das classes filhas
 class Hamburgueria(Restaurante):
     def __init__(self, nome, localizacao, status,tmolho):
         super().__init__(nome, localizacao, status) #chama o construtor da classe mãe
@@ -15,14 +15,10 @@ class Hamburgueria(Restaurante):
               Pagamento: {self.pagamento}
               ''')
      
-     
      #metodo para escolher molho   
     def escolheMolho(self,tmolho):
         print(f'O molho escolhido foi {tmolho}')
-
-   
 ###################################################################################################################################################
-    
 class Italiano(Restaurante):
     def __init__(self, nome, localizacao, status,tmenu):
         super().__init__(nome, localizacao, status) #chama o construtor da classe mãe
@@ -82,8 +78,6 @@ class Italiano(Restaurante):
                 print(f'Infelizmente não dispomos desse tipo de pizza ainda.Tente novamente!')     
         else:
             print(f'Infelizmente não dispomos desse menu.Tente novamente!')        
-      
-        
  ###################################################################################################################################################           
 class Asiatico(Restaurante):
     def __init__(self, nome, localizacao, status,trodizio):
@@ -103,7 +97,6 @@ class Asiatico(Restaurante):
      #metodo para escolher o tipo de rodízio
     def escolheRodizio(self,trodizio):
         print(f'O rodízio escolhido foi {trodizio}')
-
 
 ###################################################################################################################################################
 class Pastelaria(Restaurante):
