@@ -71,7 +71,7 @@ def alterar_restaurante():
         Categoria = input(f'Digite a nova categoria do restaurante {nome_restaurante} : ')
         localizacao = input(f'Digite a nova localização do restaurante {nome_restaurante} : ')
         status = input(f'Digite o novo status do restaurante {nome_restaurante} : ')
-        tipo_pagamento = input(f'Digite o novo tipo de serviço do restaurante {nome_restaurante} : ')
+        tipo_pagamento = ('cartão')
         # Faz o update nos valores
         x = restaurantes.index[restaurantes['Nome'] == nome_restaurante].tolist()[0] 
         if Categoria:
